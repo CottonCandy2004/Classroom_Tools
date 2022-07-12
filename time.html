@@ -1,0 +1,49 @@
+<html>
+<head>
+<style type="text/css">
+.time {
+    font-family: Consolas;
+    font-size: 100px;
+    color: #ff8ef6;
+    display: block;
+    font-weight: bold;
+    line-height:30px;
+    text-shadow:5px 5px 10px #ba24ff;
+    text-align:center;
+}
+.date {
+    font-family: 包图小白体;
+    font-size: 60px;
+    color: #ff8ef6;
+    display: block;
+    text-shadow:5px 5px 10px #ba24ff;
+    text-align:center;
+}
+</style>
+<script>
+var monthname = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+weekname_JP=['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
+weekname_zh=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+function padding(topad)
+{
+    topad = topad.toString();
+    if (topad.length == 1)
+    {
+    topad = '0' + topad;
+    };
+    return topad;
+};
+function tempus()
+{
+    now = new Date();
+    document.getElementById("time").innerHTML = padding(now.getHours()) + ':' + padding(now.getMinutes()) + ':' + padding(now.getSeconds());
+    document.getElementById("date").innerHTML = now.getFullYear()+'年'+monthname[now.getMonth()]+'月'+padding(now.getDate()) + '日 '+weekname_zh[now.getDay()];
+    setTimeout("tempus()", 200);
+}
+</script>
+</head>
+<body onload="tempus();">
+<span id="date" class="date">DATE</span><br>
+<span id="time" class="time">TIME</span>
+</body>
+</html>

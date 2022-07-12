@@ -1,0 +1,45 @@
+<html>
+<head>
+<style type="text/css">
+.time {
+    font-family: 包图小白体;
+    font-size: 160px;
+    color: #ff3838;
+    display: block;
+    font-weight: bold;
+    text-shadow:5px 5px 10px #ff9955;
+    text-align:center;
+}
+</style>
+<script type="text/javascript">
+function countTime() {
+        var date = new Date();
+        var now = date.getTime();
+        var endDate = new Date("2020-6-7 8:0:0");
+        var end = endDate.getTime();
+        var leftTime = end-now;
+        var d,h,m,s;
+        
+        d = Math.floor(leftTime/1000/60/60/24);
+        h = Math.floor(leftTime/1000/60/60%24);
+        m = Math.floor(leftTime/1000/60%60);
+        s = Math.floor(leftTime/1000%60);                   
+        
+        document.getElementById("day").innerHTML = d+"天";
+        document.getElementById("hour").innerHTML = h+"时";
+        document.getElementById("minute").innerHTML = m+"分";
+        document.getElementById("second").innerHTML = s+"秒";
+        setTimeout(countTime,200);
+}
+</script>
+</head>
+<body  onload = "countTime()">
+<span class="time">高考倒计时</span>
+<div class="time">
+    <span id="day">---天 </span>
+    <span id="hour">--时 </span>
+    <span id="minute">--分 </span>
+    <span id="second">--秒</span>
+</div>
+</body>
+</html>
