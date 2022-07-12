@@ -36,21 +36,21 @@ function countTime() {
         document.getElementById("minute").innerHTML = m+":";
     }
     if (s<10){
-        document.getElementById("second").innerHTML = "0"+s+".";
+        document.getElementById("second").innerHTML = "0"+s;
     }else{
-        document.getElementById("second").innerHTML = s+".";
+        document.getElementById("second").innerHTML = s;
     }
     // if (ms>999){
-    //     document.getElementById("msecond").innerHTML = "000";
+    //     document.getElementById("msecond").innerHTML = ".000";
     // }else{
     //     if (ms<100){
     //         if (s<10){
-    //         document.getElementById("msecond").innerHTML = "00"+ms;
+    //         document.getElementById("msecond").innerHTML = ".00"+ms;
     //         }else{
-    //         document.getElementById("msecond").innerHTML = "0"+ms;
+    //         document.getElementById("msecond").innerHTML = ".0"+ms;
     //         }
     //     }else{
-    //         document.getElementById("msecond").innerHTML = ms;
+    //         document.getElementById("msecond").innerHTML = "."+ms;
     //     }
     // }
     setTimeout(countTime,200);
