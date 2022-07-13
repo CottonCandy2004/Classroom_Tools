@@ -1,0 +1,42 @@
+<html>
+<head>
+<style type="text/css">
+.tip {
+    font-family: 包图小白体;
+    font-size: 40px;
+    color: #00e235;
+    display: block;
+    font-weight: bold;
+    text-shadow:5px 5px 10px #55ff6e;
+    text-align:left;
+}
+</style>
+<script type="text/javascript">
+var tips = ["春宵有路终须到，金榜无名誓不归",
+            "一考定终生",
+            "只要学不死，就往死里学",
+            "别在该努力的时候贪图安逸，别等到被生活欺负的时候，才发现读书真的有用",
+            "宁可血流成河，也不落榜一个",
+            "吾日三省吾身，高否？富否？帅否？  否？滚去学习！"],
+tipnumber=0;
+function countTime() {
+    if (tipnumber>=tips.length){
+        tipnumber=0;
+    }
+    document.getElementById("tipstext").innerHTML = tips[tipnumber];
+    tipnumber=tipnumber+1;
+    setTimeout(countTime,5000);
+} //顺序
+// function countTime() {
+//     document.getElementById("tipstext").innerHTML = tips[Math.floor(Math.random()*(tips.length-1))];
+//     setTimeout(countTime,5000);
+// } //随机
+</script>
+</head>
+<body  onload = "countTime()">
+<div class="tip">
+    <span>Tips:</span>
+    <span id="tipstext">no tips here</span>
+</div>
+</body>
+</html>

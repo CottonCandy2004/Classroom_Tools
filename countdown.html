@@ -13,12 +13,12 @@
 </style>
 <script type="text/javascript">
 function countTime() {
-    var date = new Date();
-    var now = date.getTime();
-    var endDate = new Date("2023-6-7 9:0:0");
-    var end = endDate.getTime();
-    var leftTime = end-now;
-    var d,h,m,s;
+    var date = new Date(),
+    now = date.getTime(),
+    endDate = new Date("2023-6-7 9:0:0"),
+    end = endDate.getTime(),
+    leftTime = end-now,
+    d,h,m,s;
     d = Math.floor(leftTime/1000/60/60/24);
     h = Math.floor(leftTime/1000/60/60%24);
     m = Math.floor(leftTime/1000/60%60);
