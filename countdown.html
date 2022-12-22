@@ -13,33 +13,58 @@
 </style>
 <script type="text/javascript">
 function countTime() {
-        var date = new Date();
-        var now = date.getTime();
-        var endDate = new Date("2020-6-7 8:0:0");
-        var end = endDate.getTime();
-        var leftTime = end-now;
-        var d,h,m,s;
-        
-        d = Math.floor(leftTime/1000/60/60/24);
-        h = Math.floor(leftTime/1000/60/60%24);
-        m = Math.floor(leftTime/1000/60%60);
-        s = Math.floor(leftTime/1000%60);                   
-        
-        document.getElementById("day").innerHTML = d+"天";
-        document.getElementById("hour").innerHTML = h+"时";
-        document.getElementById("minute").innerHTML = m+"分";
-        document.getElementById("second").innerHTML = s+"秒";
-        setTimeout(countTime,200);
+    var date = new Date(),
+    now = date.getTime(),
+    endDate = new Date("2023-6-7 23:59:59"),
+    end = endDate.getTime(),
+    leftTime = end-now,
+    d,h,m,s;
+    d = Math.floor(leftTime/1000/60/60/24);
+    // h = Math.floor(leftTime/1000/60/60%24);
+    // m = Math.floor(leftTime/1000/60%60);
+    // s = Math.floor(leftTime/1000%60);
+    // ms = Math.floor(leftTime%1000);
+    document.getElementById("day").innerHTML = d+"天";
+    // if (h<10){
+    //     document.getElementById("hour").innerHTML = "0"+h+":";
+    // }else{
+    //     document.getElementById("hour").innerHTML = h+":";
+    // }
+    // if (m<10){
+    //     document.getElementById("minute").innerHTML = "0"+m+":";
+    // }else{
+    //     document.getElementById("minute").innerHTML = m+":";
+    // }
+    // if (s<10){
+    //     document.getElementById("second").innerHTML = "0"+s;
+    // }else{
+    //     document.getElementById("second").innerHTML = s;
+    // }
+    // if (ms>999){
+    //     document.getElementById("msecond").innerHTML = ".000";
+    // }else{
+    //     if (ms<100){
+    //         if (s<10){
+    //         document.getElementById("msecond").innerHTML = ".00"+ms;
+    //         }else{
+    //         document.getElementById("msecond").innerHTML = ".0"+ms;
+    //         }
+    //     }else{
+    //         document.getElementById("msecond").innerHTML = "."+ms;
+    //     }
+    // }
+    setTimeout(countTime,200);
 }
 </script>
 </head>
 <body  onload = "countTime()">
-<span class="time">高考倒计时</span>
+<span class="title">距2023年普通高等学校<br>招生全国统一考试还有</span>
 <div class="time">
     <span id="day">---天 </span>
-    <span id="hour">--时 </span>
+    <!-- <span id="hour">--时 </span>
     <span id="minute">--分 </span>
-    <span id="second">--秒</span>
+    <span id="second">--秒</span> -->
+    <!-- <span id="msecond">--毫秒</span> -->
 </div>
 </body>
 </html>
